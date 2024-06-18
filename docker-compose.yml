@@ -1,0 +1,58 @@
+services:
+  frontend:
+    image: php:7.2-apache
+    container_name: frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontEnd:/var/www/html/
+    depends_on:
+      - backend
+    networks:
+      - network-frontend
+
+  backend:
+    build: ./backEnd
+    container_name: backend
+    ports:
+      - "3000:3000"
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: mydatabase
+    depends_on:
+      - db  #require db to be up first for connection
+    networks:
+      - network-frontend
+      - network-backend
+
+  db:
+    build:
+      context: ./db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=mydatabase
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - network-backend
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8082:80
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+    networks:
+      - network-backend
+
+volumes:
+  db-data:
+
+networks:
+  network-frontend:
+  network-backend:
