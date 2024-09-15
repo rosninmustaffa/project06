@@ -27,7 +27,3 @@ $ git clone https://github.com/rosninmustaffa/project06.git
 $ cd project06
 $ docker-compose up -d
 ```
-
-**Containers:** <br/>
-Login page http://<host-ip> <br/>
-phpMyAdmin (database management) http://<host-ip>:8082 <br/>
