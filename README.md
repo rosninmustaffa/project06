@@ -1,23 +1,23 @@
 # project06
 Simple docker compose project written in js <br/> 
 
-**project06/ **<br/>
-├── *backend/ *<br/>
-│   ├── Dockerfile
-│   ├── package.json
-│   ├── server.js
-├── *frontend/ *<br/>
-│   ├── Dockerfile
-│   ├── index.html
-│   ├── success.html
-│   ├── failure.html
-│   ├── styles.css
-│   ├── script.js
-├── *db/ *<br/>
-│   ├── Dockerfile
-│   └── init.sql
-├── *phpmyadmin/ *<br/>
-│   └── Dockerfile
+**project06/**<br/>
+├── *backend/*<br/>
+│   ├── Dockerfile <br/>
+│   ├── package.json <br/>
+│   ├── server.js <br/>
+├── *frontend/*<br/>
+│   ├── Dockerfile <br/>
+│   ├── index.html <br/>
+│   ├── success.html <br/>
+│   ├── failure.html <br/>
+│   ├── styles.css <br/>
+│   ├── script.js <br/>
+├── *db/*<br/>
+│   ├── Dockerfile <br/>
+│   └── init.sql <br/>
+├── *phpmyadmin/*<br/>
+│   └── Dockerfile <br/>
 ├── docker-compose.yml <br/>
 
 > [!TIP]
@@ -28,6 +28,6 @@ $ cd project06
 $ docker-compose up -d
 ```
 
-**Containers:**
-Login page http://<host-ip>
-phpMyAdmin (database management) http://<host-ip>:8082
+**Containers:** <br/>
+Login page http://<host-ip> <br/>
+phpMyAdmin (database management) http://<host-ip>:8082 <br/>
